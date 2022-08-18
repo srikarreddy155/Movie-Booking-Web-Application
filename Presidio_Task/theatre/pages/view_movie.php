@@ -1,11 +1,8 @@
 <?php
 include('header.php');
 ?>
-  <!-- =============================================== -->
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Movies List
@@ -16,14 +13,11 @@ include('header.php');
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
 
-      <!-- Default box --> 
       <div class="box">
         <div class="box-body">
             <div class="box box-primary">
-            <!-- /.box-header -->
             <div class="box-body">
               <?php include('../../msgbox.php');?>
               <ul class="todo-list">
@@ -35,17 +29,11 @@ include('header.php');
                         {
                         ?>
                 <li>
-                  <!-- drag handle -->
                       <span class="handle">
                         <i class="fa fa-film"></i>
                         
                       </span>
-                  <!-- checkbox -->
-                  <!-- todo text -->
                   <span class="text"><?php echo $c['movie_name'];?></span>
-                  <!-- Emphasis label -->
-                  
-                  <!-- General tools such as edit or delete-->
                   <div class="tools">
                     
                     <button class="fa fa-trash-o" onclick="del(<?php echo $c['movie_id'];?>)"></button>
@@ -58,12 +46,9 @@ include('header.php');
             </div>
           </div>
         </div> 
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
 
     </section>
-    <!-- /.content -->
   </div>
   <?php
 include('footer.php');

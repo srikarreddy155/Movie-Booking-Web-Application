@@ -35,11 +35,6 @@ CREATE TABLE `tbl_contact` (
   `subject` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_login`
---
 
 CREATE TABLE `tbl_login` (
   `id` int(11) NOT NULL,
@@ -74,9 +69,7 @@ CREATE TABLE `tbl_movie` (
   `status` int(1) NOT NULL COMMENT '0 means active '
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_movie`
---
+
 
 INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `desc`, `release_date`, `image`, `video_url`, `status`) VALUES
 (1, 3, 'The Invisible Man', 'Elisabeth Moss, Oliver Jackson-Cohen, Aldis Hodge, Storm Reid', 'Cecilia\'s abusive ex-boyfriend fakes his death and becomes invisible to stalk and torment her. She begins experiencing strange events and decides to hunt down the truth on her own.', '2020-03-04', 'images/tim.jpg', 'https://www.youtube.com/watch?v=WO_FJdiY9dA', 0),
@@ -85,11 +78,6 @@ INSERT INTO `tbl_movie` (`movie_id`, `t_id`, `movie_name`, `cast`, `desc`, `rele
 (13, 6, 'Outside the Wire', 'Anthony Mackie, Damson Idris, Emily Beecham', 'In the near future, a drone pilot sent into a war zone finds himself paired up with a top-secret android officer on a mission to stop a nuclear attack.', '2021-01-28', 'images/otw.jpg', 'https://www.youtube.com/watch?v=u8ZsUivELbs', 0),
 (17, 6, 'Justice League', 'Ben Affleck, Henry Cavil, Ezra Miller', 'This is a demo description for the movie ZSJL.', '2021-03-22', 'images/zsjl.jpg', 'https://www.youtube.com/watch?v=vM-Bja2Gy04', 0);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_news`
---
 
 CREATE TABLE `tbl_news` (
   `news_id` int(11) NOT NULL,
@@ -100,20 +88,13 @@ CREATE TABLE `tbl_news` (
   `attachment` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_news`
---
 
 INSERT INTO `tbl_news` (`news_id`, `name`, `cast`, `news_date`, `description`, `attachment`) VALUES
 (3, 'Black Widow', 'Scarlett Johansson, Florence Pugh, David Harbour, Rachel Weisz', '2021-07-09', 'At birth the Black Widow (aka Natasha Romanova) is given to the KGB, which grooms her to become its ultimate operative.', 'news_images/blackwidow.jpg'),
 (9, 'Shang-Chi and the Legend of the Ten Rings', 'Simu Liu, Awkwafina, Tony Leung, Fala Chen, Micheele Yeoh', '2021-09-14', 'Shang-Chi is a master of numerous unarmed and weaponry-based wushu styles, including the use of the gun, nunchaku, and jian.', 'news_images/shangchi.jpg'),
 (10, 'The Eternals', 'Richard Madden, Salma Hayek, Angelina Jolie, Kit Harrington', '2021-11-04', 'The saga of the eternals, a race of immortal beings who lived on earth and shaped its history and civilizations.', 'news_images/eternals.jpg');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `tbl_registration`
---
 
 CREATE TABLE `tbl_registration` (
   `user_id` int(11) NOT NULL,
@@ -124,20 +105,12 @@ CREATE TABLE `tbl_registration` (
   `gender` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_registration`
---
 
 INSERT INTO `tbl_registration` (`user_id`, `name`, `email`, `phone`, `age`, `gender`) VALUES
 (2, 'Harry Den', 'harryden@gmail.com', '1247778540', 22, 'gender'),
 (4, 'Bruno', 'bruno@gmail.com', '7451112450', 30, 'gender'),
 (5, 'James', 'james@gmail.com', '7124445696', 25, 'gender');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_screens`
---
 
 CREATE TABLE `tbl_screens` (
   `screen_id` int(11) NOT NULL,
@@ -147,9 +120,6 @@ CREATE TABLE `tbl_screens` (
   `charge` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_screens`
---
 
 INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`) VALUES
 (1, 3, 'Screen 1', 60, 350),
@@ -159,11 +129,6 @@ INSERT INTO `tbl_screens` (`screen_id`, `t_id`, `screen_name`, `seats`, `charge`
 (5, 6, 'Demo Screen', 60, 300),
 (6, 6, 'IMX Screen', 60, 600);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_shows`
---
 
 CREATE TABLE `tbl_shows` (
   `s_id` int(11) NOT NULL,
@@ -175,9 +140,6 @@ CREATE TABLE `tbl_shows` (
   `r_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_shows`
---
 
 INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`, `status`, `r_status`) VALUES
 (19, 15, 6, 11, '2021-04-15', 0, 1),
@@ -185,11 +147,6 @@ INSERT INTO `tbl_shows` (`s_id`, `st_id`, `theatre_id`, `movie_id`, `start_date`
 (21, 19, 6, 12, '2021-03-31', 1, 1),
 (22, 18, 6, 17, '2021-04-16', 1, 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_show_time`
---
 
 CREATE TABLE `tbl_show_time` (
   `st_id` int(11) NOT NULL,
@@ -198,9 +155,6 @@ CREATE TABLE `tbl_show_time` (
   `start_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_show_time`
---
 
 INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
 (1, 1, 'Noon', '10:00:00'),
@@ -224,11 +178,6 @@ INSERT INTO `tbl_show_time` (`st_id`, `screen_id`, `name`, `start_time`) VALUES
 (20, 6, 'Second', '09:18:00'),
 (21, 5, 'Matinee', '20:04:00');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_theatre`
---
 
 CREATE TABLE `tbl_theatre` (
   `id` int(11) NOT NULL,
@@ -239,9 +188,6 @@ CREATE TABLE `tbl_theatre` (
   `pin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_theatre`
---
 
 INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`) VALUES
 (3, 'AMC Theatre', '11500 Ash St', 'Leawd', 'DM', 691523),
@@ -249,117 +195,70 @@ INSERT INTO `tbl_theatre` (`id`, `name`, `address`, `place`, `state`, `pin`) VAL
 (5, 'Midtown Cinemas', 'Aue', 'Charles Street, EUS', 'DMM', 691523),
 (6, 'Riverview Theater', '3800 42nd Ave S', 'Minneapolis, MN 55406', 'Minnesot', 224450);
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `tbl_bookings`
---
 ALTER TABLE `tbl_bookings`
   ADD PRIMARY KEY (`book_id`);
 
---
--- Indexes for table `tbl_contact`
---
+
 ALTER TABLE `tbl_contact`
   ADD PRIMARY KEY (`contact_id`);
 
---
--- Indexes for table `tbl_login`
---
+
 ALTER TABLE `tbl_login`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `tbl_movie`
---
+
 ALTER TABLE `tbl_movie`
   ADD PRIMARY KEY (`movie_id`);
 
---
--- Indexes for table `tbl_news`
---
+
 ALTER TABLE `tbl_news`
   ADD PRIMARY KEY (`news_id`);
 
---
--- Indexes for table `tbl_registration`
---
+
 ALTER TABLE `tbl_registration`
   ADD PRIMARY KEY (`user_id`);
 
---
--- Indexes for table `tbl_screens`
---
+
 ALTER TABLE `tbl_screens`
   ADD PRIMARY KEY (`screen_id`);
 
---
--- Indexes for table `tbl_shows`
---
+
 ALTER TABLE `tbl_shows`
   ADD PRIMARY KEY (`s_id`);
 
---
--- Indexes for table `tbl_show_time`
---
+
 ALTER TABLE `tbl_show_time`
   ADD PRIMARY KEY (`st_id`);
 
---
--- Indexes for table `tbl_theatre`
---
 ALTER TABLE `tbl_theatre`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `tbl_bookings`
---
 ALTER TABLE `tbl_bookings`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `tbl_contact`
---
+
 ALTER TABLE `tbl_contact`
   MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tbl_login`
---
+
 ALTER TABLE `tbl_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
---
--- AUTO_INCREMENT for table `tbl_movie`
---
+
 ALTER TABLE `tbl_movie`
   MODIFY `movie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
---
--- AUTO_INCREMENT for table `tbl_news`
---
+
 ALTER TABLE `tbl_news`
   MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `tbl_registration`
---
+
 ALTER TABLE `tbl_registration`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `tbl_screens`
---
+
 ALTER TABLE `tbl_screens`
   MODIFY `screen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `tbl_shows`
---
+
 ALTER TABLE `tbl_shows`
   MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT for table `tbl_show_time`
---
+
 ALTER TABLE `tbl_show_time`
   MODIFY `st_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 

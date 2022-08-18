@@ -1,11 +1,8 @@
 <?php
 include('header.php');
 ?>
-  <!-- =============================================== -->
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Theater Details
@@ -17,10 +14,8 @@ include('header.php');
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
 
-      <!-- Default box --> 
       <div class="box">
          <div class="box-header with-border">
               <h3 class="box-title">General Details</h3>
@@ -53,7 +48,6 @@ include('header.php');
                 </tr>
             </table>
         </div> 
-        <!-- /.box-footer-->
       </div>
          <div class="box">
          <div class="box-header with-border">
@@ -108,7 +102,6 @@ include('header.php');
             }
             ?>
         </div> 
-        <!-- /.box-footer-->
       </div>
        <div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
              <div class="modal-dialog"> 
@@ -126,7 +119,6 @@ include('header.php');
                        	   	<img src="ajax-loader.gif">
                        	   </div>
                             
-                           <!-- content will be load here -->                          
                            <div id="dynamic-content"></div>
                              
                         </div> 
@@ -175,7 +167,6 @@ include('header.php');
               </div>
        </div>
     </section>
-    <!-- /.content -->
   </div>
   <?php
 include('footer.php');
@@ -191,21 +182,20 @@ include('footer.php');
 			dataType: 'html'
 		})
 		.done(function(data){
-			//console.log(data);	
 			$('#screendtls').html(data);    
 		})
 		.fail(function(){
 			$('#screendtls').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
 		  });
   }
-  $(document).ready(function(){ // load dynamic bootstrap model
+  $(document).ready(function(){
 	
 	  $(document).on('click', '#getUser', function(e){
 		
   		e.preventDefault();
   		
-  		$('#dynamic-content').html(''); // leave it blank before ajax call
-  		$('#modal-loader').show();      // load ajax loader
+  		$('#dynamic-content').html(''); 
+  		$('#modal-loader').show();
   		
   		$.ajax({
   			url: 'add_screen_form.php',
@@ -216,8 +206,8 @@ include('footer.php');
   		.done(function(data){
   			console.log(data);	
   			$('#dynamic-content').html('');    
-  			$('#dynamic-content').html(data); // load response 
-  			$('#modal-loader').hide();		  // hide ajax loader	
+  			$('#dynamic-content').html(data); 
+  			$('#modal-loader').hide();		  
   		})
   		.fail(function(){
   			$('#dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
@@ -281,7 +271,7 @@ $(document).on('click', '#savescreen', function(){
 
 $(document).on('click', '#getUser2', function(e){
 
-    screenid=$(this).data("id");//screen id
+    screenid=$(this).data("id");
 });
 $('#savetime').click(function(){
   s_time=$('#s_time').val();

@@ -19,7 +19,6 @@ include('header.php');
             <div class="box-header">
               <h3 class="box-title">Running Movies</h3>
             </div>
-            <!-- /.box-header -->
             <div class="box-body no-padding">
               <table class="table table-condensed">
                 <tr>
@@ -53,17 +52,11 @@ include('header.php');
                   ?>
               </table>
             </div>
-            <!-- /.box-body -->
           </div>
             
-            
         </div> 
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
-
     </section>
-    <!-- /.content -->
   </div>
   <?php
 include('footer.php');

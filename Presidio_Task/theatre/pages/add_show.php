@@ -4,16 +4,12 @@ include('header.php');
 <link rel="stylesheet" href="../../validation/dist/css/bootstrapValidator.css"/>
     
 <script type="text/javascript" src="../../validation/dist/js/bootstrapValidator.js"></script>
-  <!-- =============================================== -->
   <?php
     include('../../form.php');
     $frm=new formBuilder;      
   ?> 
-  <!-- =============================================== -->
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Add Show
@@ -24,10 +20,8 @@ include('header.php');
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
 
-      <!-- Default box --> 
       <div class="box">
         <div class="box-body">
           <?php include('../../msgbox.php');?>
@@ -46,7 +40,7 @@ include('header.php');
                   }
                 ?>
               </select>
-              <?php $frm->validate("movie",array("required","label"=>"Movie")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("movie",array("required","label"=>"Movie")); ?>
             </div>
             <div class="form-group">
               <label class="control-label">Select Screen</label>
@@ -62,7 +56,7 @@ include('header.php');
                   }
                 ?>
               </select>
-              <?php $frm->validate("screen",array("required","label"=>"Screen")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("screen",array("required","label"=>"Screen")); ?>
             </div>
             <div class="form-group">
               <label class="control-label">Select Show Times</label>
@@ -74,19 +68,16 @@ include('header.php');
             <div class="form-group">
               <label class="control-label">Start Date</label>
               <input type="date" name="sdate" class="form-control"/>
-              <?php $frm->validate("sdate",array("required","label"=>"Start Date")); // Validating form using form builder written in form.php ?>
+              <?php $frm->validate("sdate",array("required","label"=>"Start Date")); ?>
             </div>
             <div class="form-group">
               <button class="btn btn-success">Add Show</button>
             </div>
           </form>
         </div> 
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
 
     </section>
-    <!-- /.content -->
   </div>
   <?php
 include('footer.php');
@@ -101,7 +92,6 @@ include('footer.php');
 			dataType: 'html'
 		})
 		.done(function(data){
-			//console.log(data);	
 			$('#stime').html(data);    
 		})
 		.fail(function(){
